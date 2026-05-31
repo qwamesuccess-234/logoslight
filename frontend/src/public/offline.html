@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LogosLight — Offline</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: #0f0d2e;
+      color: #fdf8ec;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    .icon { font-size: 4rem; margin-bottom: 1.5rem; }
+    h1 {
+      font-family: Georgia, serif;
+      font-size: 2rem;
+      font-weight: bold;
+      color: #fdf8ec;
+      margin-bottom: 0.75rem;
+    }
+    p {
+      color: #9ca3af;
+      font-size: 1rem;
+      line-height: 1.7;
+      max-width: 360px;
+      margin-bottom: 2rem;
+    }
+    .verse {
+      background: rgba(212, 144, 15, 0.1);
+      border: 1px solid rgba(212, 144, 15, 0.3);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      max-width: 420px;
+      margin-bottom: 2rem;
+    }
+    .verse blockquote {
+      font-family: Georgia, serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: #fdf8ec;
+      line-height: 1.7;
+      margin-bottom: 0.75rem;
+    }
+    .verse cite {
+      font-size: 0.75rem;
+      color: #d4900f;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    button {
+      background: #d4900f;
+      color: white;
+      border: none;
+      padding: 0.75rem 2rem;
+      border-radius: 0.75rem;
+      font-size: 0.9rem;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover { background: #b97108; }
+  </style>
+</head>
+<body>
+  <div class="icon">📵</div>
+  <h1>You are offline</h1>
+  <p>
+    No internet connection right now. Your notes and bookmarks
+    are still available. Come back when you are connected to
+    sync and access new content.
+  </p>
+
+  <div class="verse">
+    <blockquote>
+      "God is our refuge and strength, a very present help in trouble."
+    </blockquote>
+    <cite>Psalm 46:1</cite>
+  </div>
+
+  <button onclick="window.location.reload()">
+    Try again
+  </button>
+
+  <script>
+    // Auto-reload when connection is restored
+    window.addEventListener('online', () => window.location.reload())
+  </script>
+</body>
+</html>

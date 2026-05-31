@@ -1,0 +1,33 @@
+# ─── Core Django ───────────────────────────────────────────────────────────────
+django>=4.2
+djangorestframework>=3.14       # REST framework — our API engine
+ 
+# ─── Database ──────────────────────────────────────────────────────────────────
+psycopg2-binary>=2.9            # PostgreSQL adapter (Supabase uses PostgreSQL)
+dj-database-url>=2.1            # Parse DATABASE_URL from .env cleanly
+ 
+# ─── Environment & Config ──────────────────────────────────────────────────────
+django-environ>=0.11            # .env file reading — ZERO secrets hardcoded
+ 
+# ─── Auth — Clerk JWT verification ─────────────────────────────────────────────
+# WHY: We do NOT use DRF SimpleJWT. Clerk issues + manages all tokens.
+# Django only VERIFIES them using Clerk's public JWKS keys.
+PyJWT>=2.8
+cryptography>=41.0
+requests>=2.31
+svix>=1.14                      # Clerk webhook signature verification
+ 
+# ─── CORS ──────────────────────────────────────────────────────────────────────
+django-cors-headers>=4.3        # Allow React (port 5173) to call Django (port 8000)
+ 
+# ─── API Quality ───────────────────────────────────────────────────────────────
+drf-spectacular>=0.27           # Auto-generates Swagger + ReDoc API docs
+django-filter>=23.5             # ?book=John&chapter=3 style filtering
+ 
+# ─── Image Handling ────────────────────────────────────────────────────────────
+Pillow>=10.0                    # For user avatars stored in Supabase Storage
+ 
+# ─── Dev / Testing ─────────────────────────────────────────────────────────────
+pytest>=7.4
+pytest-django>=4.7
+coverage>=7.3

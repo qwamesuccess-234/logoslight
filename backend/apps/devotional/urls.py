@@ -1,0 +1,1 @@
+from .models import urlpatterns  # noqa — defined in models.py for this combined file
